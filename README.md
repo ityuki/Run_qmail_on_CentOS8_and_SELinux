@@ -7,10 +7,10 @@ How to run qmail on SELinux
 * I'm not good at English. sorry.
 * If you find a mistake, please write it in the issue
 
-## Target distribution
+## Target Linux distribution
 * CentOS 8
 
-## preconditoon
+## precondition
 * CentOS 8 is running.
 * qmail installed. (`./setup setup check` is finished)
 * The setting of `control/` files completed.
@@ -235,14 +235,14 @@ semodule_package -o socket_qmail_tcp_env_t.pp -m socket_qmail_tcp_env_t.mod
 semodule -i socket_qmail_tcp_env_t.pp
 ```
 
-* run `qmail-smtpd@.socket` and check status
+* run `qmail-smtpd.socket` and check status
 ```sh
-systemctl start qmail-smtpd@.socket
-systemctl status qmail-smtpd@.socket
+systemctl start qmail-smtpd.socket
+systemctl status qmail-smtpd.socket
 ```
 * If status have not error, to enable service
 ```sh
-systemctl enable qmail-smtpd@.socket
+systemctl enable qmail-smtpd.socket
 ```
 
 ## qmail-start and qmail-smtpd is runnning!
